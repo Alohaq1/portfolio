@@ -475,14 +475,15 @@ footer{padding-block:28px;font-family:var(--mono);font-size:11px;color:var(--mut
 /* horizon: the page curves into the dark world of the case studies */
 #work{overflow:clip}
 .hz{position:relative;height:0;z-index:0;pointer-events:none}
-.hz-arc{position:absolute;left:50%;top:calc(-1 * clamp(110px,11vw,170px));width:500vw;aspect-ratio:1;border-radius:50%;background:#05070F;translate:-50% 0;transform-origin:50% 0;box-shadow:0 -1px 0 rgb(186 200 255/.9),0 -2px 18px 2px rgb(142 166 255/.55),0 -40px 120px 10px rgb(110 137 255/.35),inset 0 40px 80px -40px rgb(142 166 255/.4)}
+.hz-arc{position:absolute;left:50%;top:calc(-1 * clamp(110px,11vw,170px));width:max(600vw,9000px);aspect-ratio:1;border-radius:50%;background:#05070F;translate:-50% 0;transform-origin:50% 0;box-shadow:0 -1px 0 rgb(186 200 255/.9),0 -2px 18px 2px rgb(142 166 255/.55),0 -40px 120px 10px rgb(110 137 255/.35),inset 0 40px 80px -40px rgb(142 166 255/.4)}
 .hz-arc::before{content:"";position:absolute;left:50%;top:-1px;width:clamp(240px,46vw,760px);height:3px;translate:-50% 0;border-radius:50%;background:linear-gradient(90deg,transparent,#fff,transparent);filter:blur(1px);opacity:.9}
+.hz-fade{position:absolute;left:0;right:0;top:calc(-1 * clamp(90px,8vw,130px));height:calc(clamp(90px,8vw,130px) + 2px);background:linear-gradient(180deg,rgb(5 7 15/0),rgb(5 7 15/.85) 60%,#05070F)}
 .hz-glow{position:absolute;left:50%;top:calc(-1 * clamp(330px,30vw,460px));width:min(1400px,140vw);height:clamp(260px,26vw,380px);translate:-50% 0;background:radial-gradient(50% 100% at 50% 100%,rgb(110 137 255/.42),rgb(166 107 255/.18) 45%,transparent 75%);pointer-events:none}
 .hz-stars{position:absolute;left:50%;top:calc(-1 * clamp(330px,30vw,460px));width:min(1200px,120vw);height:clamp(240px,24vw,340px);translate:-50% 0;background-image:radial-gradient(1.2px 1.2px at 12% 70%,#fff,transparent),radial-gradient(1px 1px at 28% 40%,#fff,transparent),radial-gradient(1.4px 1.4px at 44% 82%,#cdd6ff,transparent),radial-gradient(1px 1px at 61% 30%,#fff,transparent),radial-gradient(1.2px 1.2px at 77% 64%,#e2d6ff,transparent),radial-gradient(1px 1px at 90% 38%,#fff,transparent),radial-gradient(1px 1px at 36% 18%,#fff,transparent),radial-gradient(1.3px 1.3px at 68% 88%,#fff,transparent);opacity:.55;mask-image:radial-gradient(60% 80% at 50% 100%,#000,transparent)}
 @supports (animation-timeline: view()){
   .hz-arc{animation:hz-rise linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
   .hz-glow{animation:hz-glow linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
-  @keyframes hz-rise{from{transform:scale(.82) translateY(60px)}}
+  @keyframes hz-rise{from{transform:translateY(70px)}}
   @keyframes hz-glow{from{opacity:.2;transform:scaleX(.7)}}
 }
 #work .tabpane:first-of-type,#pane-igaming,#pane-web3{position:relative;z-index:1}
@@ -1224,7 +1225,7 @@ footer{padding-block:28px;font-family:var(--mono);font-size:11px;color:var(--mut
         <button type="button" role="tab" id="tab-web3" aria-selected="false" aria-controls="pane-web3">Web3</button>
       </div>
     </div>
-    <div class="hz" aria-hidden="true"><div class="hz-glow"></div><div class="hz-stars"></div><div class="hz-arc"></div></div>
+    <div class="hz" aria-hidden="true"><div class="hz-glow"></div><div class="hz-stars"></div><div class="hz-arc"></div><div class="hz-fade"></div></div>
 
     <div class="tabpane" id="pane-igaming" role="tabpanel" aria-labelledby="tab-igaming">
 
